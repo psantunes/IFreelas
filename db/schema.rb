@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_10_31_141442) do
+ActiveRecord::Schema.define(version: 2021_11_02_142637) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -75,6 +75,9 @@ ActiveRecord::Schema.define(version: 2021_10_31_141442) do
     t.string "unconfirmed_email"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "company"
+    t.string "phone"
+    t.string "mobile"
     t.index ["email"], name: "index_clients_on_email", unique: true
     t.index ["reset_password_token"], name: "index_clients_on_reset_password_token", unique: true
   end
@@ -85,6 +88,21 @@ ActiveRecord::Schema.define(version: 2021_10_31_141442) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["campus_id"], name: "index_courses_on_campus_id"
+  end
+
+  create_table "experiences", force: :cascade do |t|
+    t.bigint "professional_id"
+    t.string "title"
+    t.text "description"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["professional_id"], name: "index_experiences_on_professional_id"
+  end
+
+  create_table "languages", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "professionals", force: :cascade do |t|
@@ -105,8 +123,62 @@ ActiveRecord::Schema.define(version: 2021_10_31_141442) do
     t.string "unconfirmed_email"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.text "description"
+    t.string "avatar"
+    t.string "mobile"
+    t.boolean "whatsapp"
+    t.string "linkedin"
+    t.string "github"
+    t.string "website"
+    t.string "birth_date"
+    t.integer "work_shift"
+    t.integer "type_of_work"
+    t.bigint "course_id"
+    t.integer "semester"
+    t.index ["course_id"], name: "index_professionals_on_course_id"
     t.index ["email"], name: "index_professionals_on_email", unique: true
     t.index ["reset_password_token"], name: "index_professionals_on_reset_password_token", unique: true
   end
 
+  create_table "professionals_languages", force: :cascade do |t|
+    t.bigint "professional_id"
+    t.bigint "skill_id"
+    t.integer "level"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["professional_id"], name: "index_professionals_languages_on_professional_id"
+    t.index ["skill_id"], name: "index_professionals_languages_on_skill_id"
+  end
+
+  create_table "professionals_regions", force: :cascade do |t|
+    t.bigint "professional_id"
+    t.bigint "region_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["professional_id"], name: "index_professionals_regions_on_professional_id"
+    t.index ["region_id"], name: "index_professionals_regions_on_region_id"
+  end
+
+  create_table "professionals_skills", force: :cascade do |t|
+    t.bigint "professional_id"
+    t.bigint "skill_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["professional_id"], name: "index_professionals_skills_on_professional_id"
+    t.index ["skill_id"], name: "index_professionals_skills_on_skill_id"
+  end
+
+  create_table "regions", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "skills", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  add_foreign_key "professionals", "courses"
 end
