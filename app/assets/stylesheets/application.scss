@@ -1,5 +1,6 @@
-@import "bootstrap/scss/bootstrap";
 
-/*
- *= require_self
- */
+@import "bootstrap/dist/css/bootstrap";
+@import "aos/dist/aos";
+@import "owl.carousel2/dist/assets/owl.carousel";
+@import "owl.carousel2/dist/assets/owl.theme.default";
+@import "style";
