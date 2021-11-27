@@ -12,14 +12,17 @@ Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
 
-import 'bootstrap'
-import "jquery"
+var jQuery = require("jquery");
+// import jQuery from "jquery";
+global.$ = global.jQuery = jQuery;
+window.$ = window.jQuery = jQuery;
+
+
+import "bootstrap"
 import "fontawesome-4.7/css/font-awesome.css"
-import AOS from "aos";
-import "owl.carousel2";
+import AOS from "aos"
+import "owl.carousel2"
 import "smooth-scroll"
-import JQuery from "jquery";
-window.$ = window.JQuery = JQuery;
 
 
 $(function () {
@@ -69,7 +72,3 @@ $(function () {
 	});
 
 });
-
-
-	
-
