@@ -31,12 +31,11 @@ https://templatemo.com/tm-538-digital-trend
  }
 
  :root {
-   --primary-color:        #057a8d;
-   --secondary-color:      #f1c111;
+   --primary-color:        #31a148;
+   --secondary-color:      #c92129;
    --white-color:          #ffffff;
    --dark-color:           #171819;
    --project-bg:           #f0f8ff;
-   --menu-bg:              #0c8195;
 
    --title-color:          #15141a;
    --gray-color:           #909090;
@@ -221,7 +220,7 @@ https://templatemo.com/tm-538-digital-trend
  -----------------------------------------*/
 
  .navbar {
-   background: var(--menu-bg);
+   background: var(--dark-color);
    z-index: 2;
    top: 0;
    right: 0;
@@ -252,7 +251,7 @@ https://templatemo.com/tm-538-digital-trend
    padding-left: 0;
  }
 
- .navbar-expand-lg .navbar-nav .nav-link.contact {
+ .navbar-expand-lg .navbar-nav .nav-link.login {
    border: 2px solid var(--secondary-color);
    border-radius: var(--border-radius-large);
    color: var(--secondary-color);
@@ -260,8 +259,8 @@ https://templatemo.com/tm-538-digital-trend
    padding: 0.6em 2em 0.8em 2em;
  }
 
- .navbar-expand-lg .navbar-nav .nav-link.contact:hover,
- .navbar-expand-lg .navbar-nav .nav-link.contact.active {
+ .navbar-expand-lg .navbar-nav .nav-link.login:hover,
+ .navbar-expand-lg .navbar-nav .nav-link.login.active {
    background: var(--secondary-color);
    color: var(--white-color);
  }
@@ -595,32 +594,6 @@ https://templatemo.com/tm-538-digital-trend
  }
 
 
-
- /*---------------------------------------
-    SOCIAL ICON              
- -----------------------------------------*/
-
- .social-icon {
-   position: relative;
-   padding: 0;
-   margin: 4em 0 0 0;
- }
-
- .social-icon li {
-   display: inline-block;
-   list-style: none;
- }
-
- .social-icon li a {
-   text-decoration: none;
-   display: inline-block;
-   font-size: var(--base-font-size);
-   margin: 10px;
-   text-align: center;
- }
-
-
-
  /*---------------------------------------
     RESPONSIVE STYLES              
  -----------------------------------------*/
@@ -663,7 +636,7 @@ https://templatemo.com/tm-538-digital-trend
      display: inline-block;
    }
 
-   .navbar-expand-lg .navbar-nav .nav-link.contact {
+   .navbar-expand-lg .navbar-nav .nav-link.login {
      margin: 1em 0;
    }
 
@@ -709,3 +682,17 @@ https://templatemo.com/tm-538-digital-trend
      margin-left: 0;
    }
  }
+
+ /*---------------------------------------
+    MY STYLES              
+ -----------------------------------------*/
+
+.hidden {
+  display: none;
+}
+
+.my-btn {
+  color: var(--white-color);
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+}

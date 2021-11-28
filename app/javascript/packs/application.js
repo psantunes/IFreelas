@@ -13,10 +13,8 @@ Turbolinks.start()
 ActiveStorage.start()
 
 var jQuery = require("jquery");
-// import jQuery from "jquery";
 global.$ = global.jQuery = jQuery;
 window.$ = window.jQuery = jQuery;
-
 
 import "bootstrap"
 import "fontawesome-4.7/css/font-awesome.css"
@@ -43,7 +41,7 @@ $(function () {
 
 	// SMOOTH SCROLL
 	$(function() {
-		$('.nav-link').on('click', function(event) {
+		$('.smoothScroll').on('click', function(event) {
 			var $anchor = $(this);
 				$('html, body').stop().animate({
 					scrollTop: $($anchor.attr('href')).offset().top - 0
