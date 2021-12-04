@@ -254,6 +254,7 @@ https://templatemo.com/tm-538-digital-trend
    border: 2px solid var(--secondary-color);
    border-radius: var(--border-radius-small);
    color: var(--secondary-color);
+   background: var(--dark-color);
    font-family: var(--font-bold-family);
    padding: 0.6em 2em 0.8em 2em;
  }
@@ -690,5 +691,14 @@ https://templatemo.com/tm-538-digital-trend
 .my-btn:hover,
 .my-btn:focus {
  background: var(--secondary-color);
-  color: var(--white-color);
+ color: var(--white-color);
+ border-color: var(--secondary-color);
+}
+
+.size-fixed {
+  width: 200px;
+}
+
+.link {
+  text-decoration: underline;
 }

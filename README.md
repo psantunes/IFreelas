@@ -22,3 +22,12 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+
+# SETUP
+
+Crie um arquivo .env na raiz da aplicação para configurar o envio de e-mails transacionais pela aplicação. Os campos necessários são:
+
+SMTP_FROM=
+SMTP_USERNAME=
+SMTP_PASSWORD=

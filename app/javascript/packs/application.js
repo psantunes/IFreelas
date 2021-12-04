@@ -21,7 +21,8 @@ import "fontawesome-4.7/css/font-awesome.css"
 import AOS from "aos"
 import "owl.carousel2"
 import "smooth-scroll"
-
+import toastr from 'toastr'
+window.toastr = toastr
 
 $(function () {
 

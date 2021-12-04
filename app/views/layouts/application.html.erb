@@ -40,13 +40,47 @@
                         <a href="#about" class="nav-link smoothScroll">Quem Somos</a>
                     </li>
                     <li class="nav-item">
-                        <a href="contact.html" class="nav-link login">Login</a>
+                        <button type="button" class="nav-link login" data-toggle="modal" data-target="#login">
+                          Login
+                        </button>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
 
+    <!-- Modal de Login -->
+    <div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="LoginModal" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content p-3">
+          <div class="modal-body">
+            <div class="row">
+              <div class="col-6 text-center">
+                Se você é estudante dos cursos de tecnologia do IFRS, faça o
+              </div>
+              <div class="col-6 text-center">
+                Se você está buscando candidatos para a sua empresa, faça o
+              </div>
+              <div class="col-6 text-center my-3">
+                <%= link_to "Login de Profissional", new_professional_session_path, class: "btn my-btn py-3 size-fixed" %>
+              </div>
+              <div class="col-6 text-center my-3">
+                <%= link_to "Login de Cliente", new_client_session_path, class: "btn my-btn py-3 mx-2 size-fixed" %>
+              </div>
+              <div class="col-6">
+
+              Primeiro acesso?<br>Faça o seu <%= link_to "cadastro de profissional", new_professional_registration_path, class: "link" %>.
+              </div>
+              <div class="col-6">
+              Primeiro acesso?<br>Faça o seu <%= link_to "cadastro de cliente", new_client_registration_path, class: "link" %>.
+              </div>
+          </div>
+
+ 
+          </div>
+        </div>
+      </div>
+    </div>
 
     <%= yield %>
 
@@ -62,5 +96,15 @@
         </div>
       </div>
     </footer>
+
+    <% unless flash.empty? %>
+    <script type="text/javascript">
+        <% flash.each do |f| %>
+      <% type = f[0].to_s.gsub('alert', 'error').gsub('notice', 'info') %>
+      toastr['<%= type %>']('<%= f[1] %>');
+    <% end %>
+    </script>
+    <% end %>
+
   </body>
 </html>
