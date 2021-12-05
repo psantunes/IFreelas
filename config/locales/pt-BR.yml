@@ -35,6 +35,16 @@
         <<: *commons
   messages:
     characters_minimum: número mínimo de caracteres 
+    confirmation_instructions_message: Não recebeu instruções para confirmar o e-mail?  
+    forgot_password: Recuperação de senha
+    forgot_your_password_message: Esqueceu a sua senha?
+    password_instructions_message: Enviar instruções para troca de senha
+    resend_confirmation: Envia nova confirmação de e-mail
+    resend_confirmation_message: Reenvia confirmação de e-mail
+    remember_me: Lembrar login e senha
+    sign_in_message: Já possui cadastro? Faça o login 
+    sign_up_message: É o seu primeiro acesso? Cadastre-se
+    sign_in: Login de %{model}
     sign_up: Cadastra %{model}
     sign_up_button: Cadastrar
-     
+    sign_in_button: Entrar
