@@ -23,6 +23,19 @@ import "owl.carousel2"
 import "smooth-scroll"
 import toastr from 'toastr'
 window.toastr = toastr
+toastr.options = {
+  "closeButton": true,
+  "debug": false,
+  "newestOnTop": true,
+  "progressBar": false,
+  "positionClass": "toast-top-left",
+  "preventDuplicates": true,
+  "onclick": null,
+  "showDuration": "0",
+  "hideDuration": "0",
+  "timeOut": "0",
+  "extendedTimeOut": "0",
+}
 
 $(function () {
 
