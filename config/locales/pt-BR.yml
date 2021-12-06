@@ -36,6 +36,8 @@
   messages:
     characters_minimum: número mínimo de caracteres 
     confirmation_instructions_message: Não recebeu instruções para confirmar o e-mail?  
+    edit: Editar %{model}
+    edit_button: Editar 
     forgot_password: Recuperação de senha
     forgot_your_password_message: Esqueceu a sua senha?
     password_instructions_message: Enviar instruções para troca de senha

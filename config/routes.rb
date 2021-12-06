@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   get 'home/index'
-  devise_for :clients
-  devise_for :professionals
+  devise_for :clients, controllers: { registrations: 'registrations' }
+  devise_for :professionals, controllers: { registrations: 'registrations' }
   devise_for :admins, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
 
