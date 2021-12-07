@@ -27,26 +27,66 @@
         other: Habilidades
     attributes:
       attribute_commons: &commons
-        name: Nome
         email: E-mail
+        mobile: Celular
+        name: Nome
         password: Senha
         password_confirmation: Confirma senha
       client:
         <<: *commons
+        company: Empresa
+        phone: Telefone
+
+  errors:
+    format: "O campo %{attribute} %{message}"
+    messages:
+      accepted: deve ser aceito
+      blank: não pode ficar em branco
+      present: deve ficar em branco
+      confirmation: não é igual a %{attribute}
+      empty: não pode ficar vazio
+      equal_to: deve ser igual a %{count}
+      even: deve ser par
+      exclusion: não está disponível
+      greater_than: deve ser maior que %{count}
+      greater_than_or_equal_to: deve ser maior ou igual a %{count}
+      inclusion: não está incluído na lista
+      invalid: não é válido
+      less_than: deve ser menor que %{count}
+      less_than_or_equal_to: deve ser menor ou igual a %{count}
+      model_invalid: "A validação falhou: %{errors}"
+      not_a_number: não é um número
+      not_an_integer: não é um número inteiro
+      odd: deve ser ímpar
+      required: é obrigatório(a)
+      taken: já está em uso
+      too_long:
+        one: "é muito longo (máximo: 1 caracter)"
+        other: "é muito longo (máximo: %{count} caracteres)"
+      too_short:
+        one: "é muito curto (mínimo: 1 caracter)"
+        other: "é muito curto (mínimo: %{count} caracteres)"
+      wrong_length:
+        one: não possui o tamanho esperado (1 caracter)
+        other: não possui o tamanho esperado (%{count} caracteres)
+      other_than: deve ser diferente de %{count}
+
   messages:
+    blank_password: Deixe em branco caso você não queira mudar a senha
     characters_minimum: número mínimo de caracteres 
+    confirm: Você tem certeza? Esta ação não pode ser revertida
     confirmation_instructions_message: Não recebeu instruções para confirmar o e-mail?  
     edit: Editar %{model}
     edit_button: Editar 
     forgot_password: Recuperação de senha
     forgot_your_password_message: Esqueceu a sua senha?
     password_instructions_message: Enviar instruções para troca de senha
+    remember_me: Lembrar login e senha
     resend_confirmation: Envia nova confirmação de e-mail
     resend_confirmation_message: Reenvia confirmação de e-mail
-    remember_me: Lembrar login e senha
-    sign_in_message: Já possui cadastro? Faça o login 
-    sign_up_message: É o seu primeiro acesso? Cadastre-se
     sign_in: Login de %{model}
+    sign_in_button: Entrar
+    sign_in_message: Já possui cadastro? Faça o login 
     sign_up: Cadastra %{model}
     sign_up_button: Cadastrar
-    sign_in_button: Entrar
+    sign_up_message: É o seu primeiro acesso? Cadastre-se

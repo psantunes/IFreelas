@@ -35,6 +35,7 @@ toastr.options = {
   "hideDuration": "0",
   "timeOut": "0",
   "extendedTimeOut": "0",
+	"escapeHtml": false
 }
 
 $(function () {
