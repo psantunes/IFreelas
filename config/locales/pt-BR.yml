@@ -36,6 +36,8 @@
         <<: *commons
         company: Empresa
         phone: Telefone
+      professional:
+        <<: *commons
 
   errors:
     format: "O campo %{attribute} %{message}"

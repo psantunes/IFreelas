@@ -22,7 +22,7 @@
         <div class="field py-2">
           <%= f.label :password %>
           <% if @minimum_password_length %>
-          <em>(<%= t('messages.characters_minimum')%>: <%= @minimum_password_length %>)</em>
+          <span class="tip">(<%= t('messages.characters_minimum')%>: <%= @minimum_password_length %>)</span>
           <% end %><br />
           <%= f.password_field :password, autocomplete: "new-password", class: "form-control" %>
         </div>
