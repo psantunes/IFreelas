@@ -1,9 +1,9 @@
 class Professional < ApplicationRecord
-  # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable
-  belongs_to :course
+         :recoverable, :rememberable, :validatable,
+         :confirmable, :trackable, :timeoutable
+
+  belongs_to :course, optional: true
   has_many :experiences
   has_and_belongs_to_many :skills
   has_and_belongs_to_many :languages

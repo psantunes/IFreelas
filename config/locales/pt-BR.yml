@@ -38,6 +38,13 @@
         phone: Telefone
       professional:
         <<: *commons
+        description: Descrição
+        avatar: Foto
+        birth_date: Data de Nascimento
+        work_shift: Turno de trabalho
+        type_of_work: Tipor de trabalho
+        course: Curso
+        semester: Semestre
 
   errors:
     format: "O campo %{attribute} %{message}"
@@ -92,3 +99,7 @@
     sign_up: Cadastra %{model}
     sign_up_button: Cadastrar
     sign_up_message: É o seu primeiro acesso? Cadastre-se
+
+  time:
+    formats:
+      long: "%Y-%m-%d %H:%M:%S"
