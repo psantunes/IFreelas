@@ -40,19 +40,29 @@
                         <a href="#about" class="nav-link smoothScroll">Quem Somos</a>
                     </li>
 
-                    <% if client_signed_in? || professional_signed_in? %>
+                    <% if client_signed_in?  %>
                       <li class="nav-item dropdown">
-
                        <a class="nav-link login dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                           <span class="avatar"><i class="fa fa-user-circle" aria-hidden="true"></i></span>
-                          <%= first_name(current_client || current_professional) %>
+                          <%= first_name(current_client) %>
                         </a>
 
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                          <%= link_to('Meus dados', edit_client_registration_path || edit_professional_registration_path, class: "dropdown-item")%>
-                          <%= link_to('Sair', destroy_client_session_path || destroy_professional_session_path, method: :delete, class: "dropdown-item") %>
+                          <%= link_to('Meus dados', edit_client_registration_path, class: "dropdown-item")%>
+                          <%= link_to('Sair', destroy_client_session_path, method: :delete, class: "dropdown-item") %>
                         </div>
-                        
+                      </li>
+                    <% elsif professional_signed_in? %>
+                      <li class="nav-item dropdown">
+                       <a class="nav-link login dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          <span class="avatar"><i class="fa fa-user-circle" aria-hidden="true"></i></span>
+                          <%= first_name(current_professional) %>
+                        </a>
+
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                          <%= link_to('Meus dados', edit_professional_registration_path, class: "dropdown-item")%>
+                          <%= link_to('Sair', destroy_professional_session_path, method: :delete, class: "dropdown-item") %>
+                        </div>
                       </li>
                     <% else %>
                       <li class="nav-item">
