@@ -20,7 +20,7 @@
 
         <div class="field py-2">
           <%= f.label :birth_date %><br />
-          <%= f.date_select :birth_date, autofocus: true, autocomplete: "birth_date", class: "form-control" %>
+          <%= f.date_field :birth_date, autofocus: true, autocomplete: "birth_date", class: "form-control" %>
         </div>
 
 
@@ -49,7 +49,7 @@
 
         <div class="field py-2">
           <%= f.label :mobile %><br />
-          <%= f.text_field :mobile, autofocus: true, autocomplete: "mobile", class: "form-control" %>
+          <%= f.phone_field :mobile, autofocus: true, autocomplete: "mobile", class: "form-control" %>
         </div>
 
         <div class="field py-2">
@@ -77,12 +77,12 @@
 
         <div class="field py-2">
           <%= f.label :course %><br />
-          <%= f.text_field :course, autofocus: true, autocomplete: "course", class: "form-control" %>
+          <%= f.collection_select(:course_id, Course.all, :id, :name_with_campus, {}, {class: "form-control"}) %>
         </div>
 
         <div class="field py-2">
           <%= f.label :semester %><br />
-          <%= f.text_field :semester, autofocus: true, autocomplete: "semester", class: "form-control" %>
+          <%= f.select(:semester, @semester.keys, {}, {class: "form-control"}) %>
         </div>
 
         <div class="field py-2">
@@ -103,6 +103,10 @@
           <strong>Habilidades e Experiências</strong>
         </div>
 
+        <div class="field py-2">
+          <%= f.label :language %><br />
+          <%= f.collection_check_boxes(:language_ids, Language.all, :id, :name, {}, {class: "form-control"}) %>
+        </div>
 
 
 

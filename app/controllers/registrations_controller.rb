@@ -16,5 +16,6 @@ class RegistrationsController < Devise::RegistrationsController
   def load_attributes
     @work_shift = Professional.work_shifts
     @type_of_work = Professional.type_of_works
+    @semester = Professional.semesters
   end
 end

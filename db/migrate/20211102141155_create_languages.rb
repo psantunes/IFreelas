@@ -5,7 +5,7 @@ class CreateLanguages < ActiveRecord::Migration[6.1]
       t.timestamps
     end
 
-    create_table :professionals_languages do |t|
+    create_table :languages_professionals do |t|
       t.belongs_to :professional
       t.belongs_to :skill
       t.integer :level

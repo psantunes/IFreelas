@@ -7,7 +7,7 @@ class AddFieldsToProfessionals < ActiveRecord::Migration[6.1]
     add_column :professionals, :linkedin, :string
     add_column :professionals, :github, :string
     add_column :professionals, :website, :string
-    add_column :professionals, :birth_date, :string
+    add_column :professionals, :birth_date, :date
     add_column :professionals, :work_shift, :integer
     add_column :professionals, :type_of_work, :integer
     add_reference :professionals, :course, foreign_key: true

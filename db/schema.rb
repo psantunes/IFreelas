@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_12_11_145724) do
+ActiveRecord::Schema.define(version: 2021_11_02_142637) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -105,6 +105,16 @@ ActiveRecord::Schema.define(version: 2021_12_11_145724) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "languages_professionals", force: :cascade do |t|
+    t.bigint "professional_id"
+    t.bigint "skill_id"
+    t.integer "level"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["professional_id"], name: "index_languages_professionals_on_professional_id"
+    t.index ["skill_id"], name: "index_languages_professionals_on_skill_id"
+  end
+
   create_table "professionals", force: :cascade do |t|
     t.string "name", null: false
     t.string "email", default: "", null: false
@@ -138,16 +148,6 @@ ActiveRecord::Schema.define(version: 2021_12_11_145724) do
     t.index ["course_id"], name: "index_professionals_on_course_id"
     t.index ["email"], name: "index_professionals_on_email", unique: true
     t.index ["reset_password_token"], name: "index_professionals_on_reset_password_token", unique: true
-  end
-
-  create_table "professionals_languages", force: :cascade do |t|
-    t.bigint "professional_id"
-    t.bigint "skill_id"
-    t.integer "level"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["professional_id"], name: "index_professionals_languages_on_professional_id"
-    t.index ["skill_id"], name: "index_professionals_languages_on_skill_id"
   end
 
   create_table "professionals_regions", force: :cascade do |t|
