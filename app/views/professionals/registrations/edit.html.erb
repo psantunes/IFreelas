@@ -10,8 +10,32 @@
         <%= render "clients/shared/error_messages", resource: resource %>
 
         <div class="field py-2">
+          <strong>Identificação</strong>
+        </div>
+
+        <div class="field py-2">
           <%= f.label :name %><br />
           <%= f.text_field :name, autofocus: true, autocomplete: "name", class: "form-control" %>
+        </div>
+
+        <div class="field py-2">
+          <%= f.label :birth_date %><br />
+          <%= f.text_field :birth_date, autofocus: true, autocomplete: "birth_date", class: "form-control" %>
+        </div>
+
+
+        <div class="field py-2">
+          <%= f.label :description %><br />
+          <%= f.text_area :description, autofocus: true, autocomplete: "description", class: "form-control" %>
+        </div>
+
+        <div class="field py-2">
+          <%= f.label :avatar %><br />
+          <%= f.text_field :avatar, autofocus: true, autocomplete: "avatar", class: "form-control" %>
+        </div>
+
+        <div class="field py-2">
+          <strong>Dados para contato</strong>
         </div>
 
         <div class="field py-2">
@@ -22,6 +46,70 @@
         <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
           <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
         <% end %>
+
+        <div class="field py-2">
+          <%= f.label :mobile %><br />
+          <%= f.text_field :mobile, autofocus: true, autocomplete: "mobile", class: "form-control" %>
+        </div>
+
+        <div class="field py-2">
+          <%= f.check_box :whatsapp, autofocus: true %> <%= f.label :whatsapp %>
+        </div>
+
+        <div class="field py-2">
+          <%= f.label :linkedin %><br />
+          <%= f.text_field :linkedin, autofocus: true, autocomplete: "linkedin", class: "form-control" %>
+        </div>
+
+        <div class="field py-2">
+          <%= f.label :github %><br />
+          <%= f.text_field :github, autofocus: true, autocomplete: "github", class: "form-control" %>
+        </div>
+
+        <div class="field py-2">
+          <%= f.label :website %><br />
+          <%= f.text_field :website, autofocus: true, autocomplete: "website", class: "form-control" %>
+        </div>
+
+        <div class="field py-2">
+          <strong>Vínculo com o IFRS</strong>
+        </div>
+
+        <div class="field py-2">
+          <%= f.label :course %><br />
+          <%= f.text_field :course, autofocus: true, autocomplete: "course", class: "form-control" %>
+        </div>
+
+        <div class="field py-2">
+          <%= f.label :semester %><br />
+          <%= f.text_field :semester, autofocus: true, autocomplete: "semester", class: "form-control" %>
+        </div>
+
+        <div class="field py-2">
+          <strong>Disponibilidade</strong>
+        </div>
+
+        <div class="field py-2">
+          <%= f.label :work_shift %><br />
+          <%= f.select(:work_shift, @work_shift.keys, {}, {class: "form-control"}) %>
+        </div>
+
+        <div class="field py-2">
+          <%= f.label :type_of_work %><br />
+          <%= f.select(:type_of_work, @type_of_work.keys, {}, {class: "form-control"}) %>
+        </div>
+
+        <div class="field py-2">
+          <strong>Habilidades e Experiências</strong>
+        </div>
+
+
+
+
+
+        <div class="field py-2">
+          <strong>Segurança</strong>
+        </div>
 
         <div class="field py-2">
           <%= f.label :password %><br />

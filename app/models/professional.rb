@@ -9,6 +9,6 @@ class Professional < ApplicationRecord
   has_and_belongs_to_many :languages
   has_and_belongs_to_many :regions
 
-  enum type_of_work: { "In company": 0, "Home office": 1 }
-  enum work_shift: { Manhã: 0, Tarde: 1, Noite: 2, "Finais de semana": 3 }
+  enum type_of_work: { "In company": 0, "Home office": 1, Hìbrido: 2 }
+  enum work_shift: { Manhã: 0, Tarde: 1, Noite: 2, Integral: 3, "Finais de semana": 4 }
 end

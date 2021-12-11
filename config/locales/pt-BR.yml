@@ -41,10 +41,11 @@
         description: Descrição
         avatar: Foto
         birth_date: Data de Nascimento
-        work_shift: Turno de trabalho
-        type_of_work: Tipor de trabalho
         course: Curso
         semester: Semestre
+        type_of_work: Tipor de trabalho
+        whatsapp: Quero ser contatado por Whatsapp
+        work_shift: Turno de trabalho
 
   errors:
     format: "O campo %{attribute} %{message}"
