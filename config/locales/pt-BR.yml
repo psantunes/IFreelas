@@ -38,11 +38,13 @@
         phone: Telefone
       professional:
         <<: *commons
-        description: Descrição
         avatar: Foto
         birth_date: Data de Nascimento
         course: Curso
+        description: Descrição
+        languages: Idiomas
         semester: Semestre
+        skills: Habilidades
         type_of_work: Tipor de trabalho
         whatsapp: Quero ser contatado por Whatsapp
         work_shift: Turno de trabalho
@@ -148,6 +150,7 @@
     remember_me: Lembrar login e senha
     resend_confirmation: Envia nova confirmação de e-mail
     resend_confirmation_message: Reenvia confirmação de e-mail
+    select: Selecione... 
     sign_in: Login de %{model}
     sign_in_button: Entrar
     sign_in_message: Já possui cadastro? Faça o login 

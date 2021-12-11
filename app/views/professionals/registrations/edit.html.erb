@@ -77,12 +77,12 @@
 
         <div class="field py-2">
           <%= f.label :course %><br />
-          <%= f.collection_select(:course_id, Course.all, :id, :name_with_campus, {}, {class: "form-control"}) %>
+          <%= f.collection_select(:course_id, Course.all, :id, :name_with_campus, {prompt: t('messages.select') }, {class: "form-control"}) %>
         </div>
 
         <div class="field py-2">
           <%= f.label :semester %><br />
-          <%= f.select(:semester, @semester.keys, {}, {class: "form-control"}) %>
+          <%= f.select(:semester, @semester.keys, {prompt: t('messages.select') }, {class: "form-control"}) %>
         </div>
 
         <div class="field py-2">
@@ -91,12 +91,12 @@
 
         <div class="field py-2">
           <%= f.label :work_shift %><br />
-          <%= f.select(:work_shift, @work_shift.keys, {}, {class: "form-control"}) %>
+          <%= f.select(:work_shift, @work_shift.keys, {prompt: t('messages.select') }, {class: "form-control"}) %>
         </div>
 
         <div class="field py-2">
           <%= f.label :type_of_work %><br />
-          <%= f.select(:type_of_work, @type_of_work.keys, {}, {class: "form-control"}) %>
+          <%= f.select(:type_of_work, @type_of_work.keys, {prompt: t('messages.select') }, {class: "form-control"}) %>
         </div>
 
         <div class="field py-2">
@@ -104,10 +104,27 @@
         </div>
 
         <div class="field py-2">
-          <%= f.label :language %><br />
-          <%= f.collection_check_boxes(:language_ids, Language.all, :id, :name, {}, {class: "form-control"}) %>
+          <%= f.label :languages %><br>
+          <div class="form-check">
+            <%= f.collection_check_boxes(:languages, Language.all, :id, :name, include_hidden: false) do |b| %> 
+              <%= b.label do %>
+                <%= b.check_box(class: "form-check-input") %> <span class="form-check-label"><%= b.object.name %></span>
+              <% end %><br>
+            <% end %>
+         </div>
         </div>
 
+
+        <div class="field py-2">
+          <%= f.label :skills %><br>
+          <div class="form-check">
+            <%= f.collection_check_boxes(:skills, Skill.all, :id, :name, include_hidden: false) do |b| %> 
+              <%= b.label do %>
+                <%= b.check_box(class: "form-check-input") %> <span class="form-check-label"><%= b.object.name %></span>
+              <% end %><br>
+            <% end %>
+         </div>
+        </div>
 
 
 

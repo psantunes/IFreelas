@@ -5,13 +5,27 @@ class ApplicationController < ActionController::Base
 
   def configure_permitted_parameters
     permitted = [
+      :avatar,
+      :birth_date,
       :company,
-      :phone,
+      :course_id,
+      :description,
+      :email,
+      :github,
+      :languages,
+      :linkedin,
       :mobile,
       :name,
-      :email,
+      :semester,
       :password,
-      :password_confirmation
+      :password_confirmation,
+      :phone,
+      :skills,
+      :type_of_work,
+      :website,
+      :whatsapp,
+      :work_shift
+
     ]
     devise_parameter_sanitizer.permit(:sign_up, keys: permitted)
     devise_parameter_sanitizer.permit(:account_update, keys: permitted)

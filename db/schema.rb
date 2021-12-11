@@ -107,12 +107,12 @@ ActiveRecord::Schema.define(version: 2021_11_02_142637) do
 
   create_table "languages_professionals", force: :cascade do |t|
     t.bigint "professional_id"
-    t.bigint "skill_id"
+    t.bigint "languages_id"
     t.integer "level"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["languages_id"], name: "index_languages_professionals_on_languages_id"
     t.index ["professional_id"], name: "index_languages_professionals_on_professional_id"
-    t.index ["skill_id"], name: "index_languages_professionals_on_skill_id"
   end
 
   create_table "professionals", force: :cascade do |t|
