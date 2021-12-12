@@ -140,7 +140,9 @@
 
   messages:
     blank_password: Deixe em branco caso você não queira mudar a senha
-    characters_minimum: número mínimo de caracteres 
+    characters_minimum: número mínimo de caracteres
+    change_pass: Troca de senha de %{model}
+    change_pass_button: Trocar senha
     confirm: Você tem certeza? Esta ação não pode ser revertida
     confirmation_instructions_message: Não recebeu instruções para confirmar o e-mail?  
     edit: Editar %{model}
