@@ -77,7 +77,6 @@ ActiveRecord::Schema.define(version: 2021_11_02_142637) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "company"
     t.string "phone"
-    t.string "mobile"
     t.index ["email"], name: "index_clients_on_email", unique: true
     t.index ["reset_password_token"], name: "index_clients_on_reset_password_token", unique: true
   end
@@ -150,7 +149,7 @@ ActiveRecord::Schema.define(version: 2021_11_02_142637) do
     t.index ["reset_password_token"], name: "index_professionals_on_reset_password_token", unique: true
   end
 
-  create_table "professionals_regions", force: :cascade do |t|
+  create_table "professionals_regions", id: false, force: :cascade do |t|
     t.bigint "professional_id"
     t.bigint "region_id"
     t.datetime "created_at", precision: 6, null: false
@@ -159,7 +158,7 @@ ActiveRecord::Schema.define(version: 2021_11_02_142637) do
     t.index ["region_id"], name: "index_professionals_regions_on_region_id"
   end
 
-  create_table "professionals_skills", force: :cascade do |t|
+  create_table "professionals_skills", id: false, force: :cascade do |t|
     t.bigint "professional_id"
     t.bigint "skill_id"
     t.datetime "created_at", precision: 6, null: false
