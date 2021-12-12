@@ -24,7 +24,9 @@ class ApplicationController < ActionController::Base
       :website,
       :whatsapp,
       :work_shift,
-      { language_ids: [] }
+      { language_ids: [] },
+      { region_ids: [] },
+      { skill_ids: [] }
     ]
     devise_parameter_sanitizer.permit(:sign_up, keys: permitted)
     devise_parameter_sanitizer.permit(:account_update, keys: permitted)

@@ -5,7 +5,7 @@ class CreateSkills < ActiveRecord::Migration[6.1]
       t.timestamps
     end
 
-    create_table :professionals_skills do |t|
+    create_table :professionals_skills, id: false do |t|
       t.belongs_to :professional
       t.belongs_to :skill
       t.timestamps

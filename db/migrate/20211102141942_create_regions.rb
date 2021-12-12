@@ -5,7 +5,7 @@ class CreateRegions < ActiveRecord::Migration[6.1]
       t.timestamps
     end
 
-    create_table :professionals_regions do |t|
+    create_table :professionals_regions, id: false do |t|
       t.belongs_to :professional
       t.belongs_to :region
       t.timestamps

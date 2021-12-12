@@ -43,6 +43,7 @@
         course: Curso
         description: Descrição
         languages: Idiomas
+        regions: Área de atuação (se presencial)
         semester: Semestre
         skills: Habilidades
         type_of_work: Tipor de trabalho
