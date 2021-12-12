@@ -12,7 +12,6 @@ class ApplicationController < ActionController::Base
       :description,
       :email,
       :github,
-      :languages,
       :linkedin,
       :mobile,
       :name,
@@ -24,8 +23,8 @@ class ApplicationController < ActionController::Base
       :type_of_work,
       :website,
       :whatsapp,
-      :work_shift
-
+      :work_shift,
+      { language_ids: [] }
     ]
     devise_parameter_sanitizer.permit(:sign_up, keys: permitted)
     devise_parameter_sanitizer.permit(:account_update, keys: permitted)

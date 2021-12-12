@@ -103,17 +103,18 @@
           <strong>Habilidades e Experiências</strong>
         </div>
 
+
         <div class="field py-2">
-          <%= f.label :languages %><br>
+
           <div class="form-check">
-            <%= f.collection_check_boxes(:languages, Language.all, :id, :name, include_hidden: false) do |b| %> 
+            <%= f.collection_check_boxes(:language_ids, Language.all, :id, :name, include_hidden: false) do |b| %> 
               <%= b.label do %>
                 <%= b.check_box(class: "form-check-input") %> <span class="form-check-label"><%= b.object.name %></span>
               <% end %><br>
             <% end %>
          </div>
-        </div>
 
+        </div>
 
         <div class="field py-2">
           <%= f.label :skills %><br>
@@ -125,8 +126,6 @@
             <% end %>
          </div>
         </div>
-
-
 
         <div class="field py-2">
           <strong>Segurança</strong>

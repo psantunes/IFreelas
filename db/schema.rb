@@ -105,13 +105,13 @@ ActiveRecord::Schema.define(version: 2021_11_02_142637) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "languages_professionals", force: :cascade do |t|
+  create_table "languages_professionals", id: false, force: :cascade do |t|
     t.bigint "professional_id"
-    t.bigint "languages_id"
+    t.bigint "language_id"
     t.integer "level"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["languages_id"], name: "index_languages_professionals_on_languages_id"
+    t.index ["language_id"], name: "index_languages_professionals_on_language_id"
     t.index ["professional_id"], name: "index_languages_professionals_on_professional_id"
   end
 
