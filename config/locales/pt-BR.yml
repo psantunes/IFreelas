@@ -143,6 +143,7 @@
     characters_minimum: número mínimo de caracteres
     change_pass: Troca de senha de %{model}
     change_pass_button: Trocar senha
+    choose_file: Selecionar arquivo
     confirm: Você tem certeza? Esta ação não pode ser revertida
     confirmation_instructions_message: Não recebeu instruções para confirmar o e-mail?  
     edit: Editar %{model}
