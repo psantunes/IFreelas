@@ -26,7 +26,8 @@ class ApplicationController < ActionController::Base
       :work_shift,
       { language_ids: [] },
       { region_ids: [] },
-      { skill_ids: [] }
+      { skill_ids: [] },
+      experiences_attributes: [:id, :title, :description, :_destroy]
     ]
     devise_parameter_sanitizer.permit(:sign_up, keys: permitted)
     devise_parameter_sanitizer.permit(:account_update, keys: permitted)

@@ -21,7 +21,7 @@ import "fontawesome-4.7/css/font-awesome.css"
 import AOS from "aos"
 import "owl.carousel2"
 import "smooth-scroll"
-import toastr from 'toastr'
+import toastr from "toastr"
 window.toastr = toastr
 toastr.options = {
   "closeButton": true,
@@ -37,6 +37,7 @@ toastr.options = {
   "extendedTimeOut": "0",
 	"escapeHtml": false
 }
+import 'cocoon-js'
 
 $(function () {
 

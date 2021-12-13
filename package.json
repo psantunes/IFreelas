@@ -9,6 +9,7 @@
     "@rails/webpacker": "5.4.3",
     "aos": "^2.3.4",
     "bootstrap": "4.2.1",
+    "cocoon-js": "^0.0.5",
     "fontawesome-4.7": "^4.7.0",
     "jquery": "^3.6.0",
     "owl.carousel2": "^2.2.2",

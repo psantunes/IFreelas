@@ -107,11 +107,11 @@
                 <%= b.check_box(class: "form-check-input") %> <span class="form-check-label"><%= b.object.name %></span>
               <% end %><br>
             <% end %>
-           </div>
+         </div>
          </div>
 
         <div class="field py-2">
-          <strong>Habilidades e Experiências</strong>
+          <strong>Conhecimentos</strong>
         </div>
 
 
@@ -137,6 +137,18 @@
             <% end %>
          </div>
         </div>
+
+        <div class="field py-2">
+          <strong>Experiências pessoais e profissionais</strong>
+        </div>
+
+        <div id="experiences" class="field py-2">
+          <%= f.fields_for :experiences do |experience| %> 
+            <%= render partial: "experience_fields", locals: { f: experience } %>
+          <% end %>
+          <%= link_to_add_association("Adiciona experiência", f, :experiences) %>
+        </div>
+
 
         <div class="field py-2">
           <strong>Segurança</strong>

@@ -1,5 +1,5 @@
 class RegistrationsController < Devise::RegistrationsController
-  before_action :load_attributes, only: [:edit]
+  before_action :load_attributes, only: [:edit, :update]
 
   protected
 

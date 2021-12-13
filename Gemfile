@@ -5,6 +5,7 @@ ruby '3.0.2'
 
 # Added by psantunes
 gem 'activeadmin'
+gem 'cocoon'
 gem 'devise', '~> 4.2'
 
 gem 'rails', '~> 6.1.4', '>= 6.1.4.1'
