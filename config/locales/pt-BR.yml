@@ -36,6 +36,9 @@
         <<: *commons
         company: Empresa
         phone: Telefone
+      experience:
+        description: Descrição
+        title: Título
       professional:
         <<: *commons
         avatar: Foto
@@ -145,7 +148,7 @@
     change_pass_button: Trocar senha
     choose_file: Selecionar arquivo
     confirm: Você tem certeza? Esta ação não pode ser revertida
-    confirmation_instructions_message: Não recebeu instruções para confirmar o e-mail?  
+    confirmation_instructions_message: Não recebeu instruções para confirmar o e-mail?
     edit: Editar %{model}
     edit_button: Editar 
     forgot_password: Recuperação de senha
@@ -165,3 +168,11 @@
   time:
     formats:
       long: "%Y-%m-%d %H:%M:%S"
+
+  cocoon:
+    defaults:
+      add: "Adiciona"
+      remove: "Remove"
+    experiences:
+      add: "Adiciona nova experiência"
+      remove: "Remove experiência"

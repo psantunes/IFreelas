@@ -31,7 +31,7 @@
 
         <div class="field py-2">
           <%= f.label :avatar %><br />
-          <%= f.file_field :avatar, autofocus: true, autocomplete: "avatar", class: "form-control " %>
+          <%= f.file_field :avatar, autofocus: true, autocomplete: "avatar", class: "btn-file" %>
         </div>
 
         <div class="field py-2">
@@ -77,7 +77,7 @@
 
         <div class="field py-2">
           <%= f.label :course %><br />
-          <%= f.collection_select(:course_id, Course.all, :id, :name_with_campus, {prompt: t('messages.select') }, {class: "form-control"}) %>
+          <%= f.collection_select(:course_id, @course, :id, :name_with_campus, {prompt: t('messages.select') }, {class: "form-control"}) %>
         </div>
 
         <div class="field py-2">
@@ -102,7 +102,7 @@
         <div class="field py-2">
           <%= f.label :regions %><br>
           <div class="form-check">
-            <%= f.collection_check_boxes(:region_ids, Region.all, :id, :name, include_hidden: false) do |b| %> 
+            <%= f.collection_check_boxes(:region_ids, @region, :id, :name, include_hidden: false) do |b| %> 
               <%= b.label do %>
                 <%= b.check_box(class: "form-check-input") %> <span class="form-check-label"><%= b.object.name %></span>
               <% end %><br>
@@ -146,7 +146,8 @@
           <%= f.fields_for :experiences do |experience| %> 
             <%= render partial: "experience_fields", locals: { f: experience } %>
           <% end %>
-          <%= link_to_add_association("Adiciona experiência", f, :experiences) %>
+          <div class="text-right"><%= link_to_add_association(f, :experiences, class: "classicbutton p-1 text-right") %></div>
+
         </div>
 
 
