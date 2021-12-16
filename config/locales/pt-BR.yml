@@ -157,6 +157,7 @@
     remember_me: Lembrar login e senha
     resend_confirmation: Envia nova confirmação de e-mail
     resend_confirmation_message: Reenvia confirmação de e-mail
+    search: Buscar
     select: Selecione... 
     sign_in: Login de %{model}
     sign_in_button: Entrar

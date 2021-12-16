@@ -1,5 +1,13 @@
 
      <!-- PROJECT -->
+
+
+
+
+
+
+
+
      <section class="project section-padding" id="search">
           <div class="container-fluid">
                <div class="row">
@@ -7,9 +15,25 @@
                     <div class="col-lg-12 col-12">
 
                         <h2 class="mb-5 text-center" data-aos="fade-up">
-                            Please take a look through our
-                            <strong>featured Digital Trends</strong>
+                            Resultado da busca por <strong><%= params[:search] %></strong>
                         </h2>
+
+
+
+
+
+                         <p>
+                              <% @professionals.each do |professional| %>
+                                   <%= professional.name %><br/>
+                              <% end %>
+
+
+                         </p>
+
+                         <p> <%= @param_s %> </p>
+
+
+
 
                          <div class="owl-carousel owl-theme" id="project-slide">
                               <div class="item project-wrapper" data-aos="fade-up" data-aos-delay="100">
