@@ -153,7 +153,10 @@
     edit_button: Editar 
     forgot_password: Recuperação de senha
     forgot_your_password_message: Esqueceu a sua senha?
+    help_avatar: Insira uma foto sua, de preferência em formato quadrado
+    help_description: Escreva aqui uma breve descrição sua
     password_instructions_message: Enviar instruções para troca de senha
+    required: Campo obrigatório
     remember_me: Lembrar login e senha
     resend_confirmation: Envia nova confirmação de e-mail
     resend_confirmation_message: Reenvia confirmação de e-mail

@@ -16,6 +16,7 @@
         <div class="field py-2">
           <%= f.label :name %><br />
           <%= f.text_field :name, autofocus: true, autocomplete: "name", class: "form-control" %>
+          <span class="tip"><%= t("messages.required") %></span>
         </div>
 
         <div class="field py-2">
@@ -27,11 +28,13 @@
         <div class="field py-2">
           <%= f.label :description %><br />
           <%= f.text_area :description, autofocus: true, autocomplete: "description", class: "form-control" %>
+          <span class="tip"><%= t("messages.help_description") %>. <%= t("messages.required") %></span>
         </div>
 
         <div class="field py-2">
           <%= f.label :avatar %><br />
-          <%= f.file_field :avatar, autofocus: true, autocomplete: "avatar", class: "btn-file" %>
+          <%= f.file_field :avatar, autofocus: true, autocomplete: "avatar", class: "btn-file" %><br>
+          <span class="tip"><%= t("messages.help_avatar") %></span>
         </div>
 
         <div class="field py-2">
@@ -41,6 +44,7 @@
         <div class="field py-2">
           <%= f.label :email %><br />
           <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control" %>
+          <%= t("messages.required") %>
         </div>
 
         <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
@@ -50,6 +54,7 @@
         <div class="field py-2">
           <%= f.label :mobile %><br />
           <%= f.phone_field :mobile, autofocus: true, autocomplete: "mobile", class: "form-control" %>
+          <%= t("messages.required") %>
         </div>
 
         <div class="field py-2">
@@ -78,11 +83,13 @@
         <div class="field py-2">
           <%= f.label :course %><br />
           <%= f.collection_select(:course_id, @course, :id, :name_with_campus, {prompt: t('messages.select') }, {class: "form-control"}) %>
+          <%= t("messages.required") %>
         </div>
 
         <div class="field py-2">
           <%= f.label :semester %><br />
           <%= f.select(:semester, @semester.keys, {prompt: t('messages.select') }, {class: "form-control"}) %>
+          <%= t("messages.required") %>
         </div>
 
         <div class="field py-2">
