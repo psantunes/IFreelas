@@ -155,6 +155,9 @@
     forgot_your_password_message: Esqueceu a sua senha?
     help_avatar: Insira uma foto sua, de preferência em formato quadrado
     help_description: Escreva aqui uma breve descrição sua
+    help_github: Você possui um repositório no github? Insira aqui o endereço dele
+    help_linkedin: Muitas empresas procuram candidatos pelo Linkedin. Insira seu perfil
+    help_website: Você possui um site com o seu portfólio? Insira o link
     password_instructions_message: Enviar instruções para troca de senha
     required: Campo obrigatório
     remember_me: Lembrar login e senha
