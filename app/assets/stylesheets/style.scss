@@ -722,7 +722,7 @@ https://templatemo.com/tm-538-digital-trend
   border: 1px solid #999;
 }
 
-.aqua-gradient {
+.my-gradient {
   height: 175px;
   background: linear-gradient(330deg, rgba(255,255,255,1) 0%, rgba(49,161,72,1) 51%, rgba(201,33,41,1) 100%, rgba(252,70,107,1) 100%);
 }
@@ -734,4 +734,20 @@ https://templatemo.com/tm-538-digital-trend
 .avatar-container {
   width: 80%;
   border: 1px solid #eee;
+}
+
+.avatar-internal {
+  width: 120px;
+}
+.skills {
+  margin: 10px;
+  padding: 1px 5px;
+  border: 1px solid var(--primary-color);
+  background-color: var(--primary-color);
+  color: var(--white-color);
+  width: 130px;
+  float: left;
+}
+.skills_br {
+  clear: both;
 }

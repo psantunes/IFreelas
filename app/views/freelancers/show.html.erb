@@ -1,0 +1,87 @@
+<section id="freelancer">
+  <div class="cointainer">
+    <div class="col-md-8 offset-md-2 col-12">
+
+        <div class="row py-3">
+          <div class="col-12 col-md-3">
+            <div class="avatar mx-auto white">
+                <%= image_tag(@professional.avatar, class: "rounded-circle img-responsive bg-white p-2 avatar-internal", alt: @professional.name) %>
+            </div>
+          </div>
+
+          <div class="col-12 col-md-9 text-center pt-2">
+            <h3>Currículo de<br><strong><%= @professional.name %></strong></h3>
+          </div>
+        </div>
+        <div class="row py-3">
+
+          <div class="col-12">
+            
+            <p><%= @professional.description %></p>
+            <p>Cursando o <%= @professional.semester %> semestre do curso <%= @professional.course.name %>.</p>    
+            <% if @professional.birth_date.present? %>
+              <%  age = Date.today.year - @professional.birth_date.year %>
+              <%  age -= 1 if Date.today < @professional.birth_date + age.years %>
+            <p>Possui <%= age %> anos de idade.</p>    
+            <% end %>
+          </div>
+
+
+          <% if @professional.languages.present? %>
+            <div class="col-12">
+                <p><strong>Idiomas</strong></p>
+              
+                <% @professional.languages.each do |language| %>
+                  <div class="skills"><i class="fa fa-check"></i> <%= language.name %></div>
+                <% end %>
+                <div class="skills_br"></div>
+            </div>
+          <% end %>
+
+          <% if @professional.skills.present? %>
+            <div class="col-12">
+
+                <p><strong>Habilidades</strong></p>
+                  
+                <% @professional.skills.each do |skill| %>
+                  <div class="skills"><i class="fa fa-check"></i> <%= skill.name %></div>
+                <% end %>
+                <div class="skills_br"></div>
+
+            </div>
+          <% end %>
+              
+            <div class="col-12">
+
+
+              <h4 class="mb-3 mt-5">Experiência</h4>
+
+            <p><strong>Title</strong></p>
+            <p>Descriptio.</p>
+
+
+              
+            <h4 class="mb-3 mt-5">4. Disponibilidade</h4>
+            <p>Horários livres: manhãe e tardes.</p>
+            <p>Disponível para trabalho: home office e in company.</p>
+            <p>Regiões de preferência: Porto Alegre (todas as regiões).</p>
+            
+            <h4 class="mb-3 mt-5">5. Contato</h4>
+              
+                <div class="text-center">
+                <ul class="ftco-footer-social">
+                <li><a href="linkedin"><span class="icon-linkedin"></span></a></li>
+                <li><a href="zap"><span class="icon-whatsapp"></span></a></li>
+                <li><a href="site"><span class="icon-link"></span></a></li>
+                <li><a href="mailto:email"><span class="icon-mail_outline"></span></a></li>
+                </ul>
+                </div>
+                <br>
+              
+          </div>
+          </div>
+
+          </div>
+    </div>
+  </div>
+</section>

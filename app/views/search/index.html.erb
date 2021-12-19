@@ -14,44 +14,74 @@
 
                     <div class="col-lg-12 col-12">
 
-                        <h2 class="mb-5 text-center" data-aos="fade-up">
-                            Busca por <strong><%= params[:search] %></strong>
-                            <% if @professionals.count.blank? %>
-                                 não encontrou registros
-                            <% elsif @professionals.count == 1 %>
-                                 retornou <strong>um</strong> registro
-                            <% else %>
-                                 retornou <strong><%= @professionals.count %></strong> registros
-                            <% end %>
-                        </h2>
+                         <% if @professionals.blank? %>
+                              <h2 class="mb-5 text-center" data-aos="fade-up">
+                              Busca por <strong><%= params[:search] %></strong>
+                              não encontrou registros</h2>
+
+                              <div class="row">
+
+                                   <div class="col-md-8 offset-md-2 col-12">
+
+                                        <p class="p-0 mb-3 text-center" data-aos="fade-up">
+                                             Tente novamente. Digite o nome de outra habilidade semelhante<br>
+                                             para encontre um profissional
+                                        </p>
+
+                                        <div class="form-group">
+
+                                             <%= form_tag(search_path, method: :get, authenticity_token: false) do %>
+                                                  <div class="input-group m-5">
+                                                       <%= text_field_tag 'search', nil, placeholder: "Exemplos: React, NodeJS, Java.", class: "form-control form-control-lg", autofocus: true %>
+                                                       <div class="input-group-append">
+                                                            <%= submit_tag(t('messages.search'), class: "btn my-btn px-md-5", name: nil) %>
+                                                       </div>
+                                                  </div>
+                                             <% end %>
 
 
-                         <div class="owl-carousel owl-theme" id="project-slide">
-
-                              <% @professionals.each do |professional| %>
-                                   <%= link_to "#" do %>
-                                   <div class="item project-wrapper" data-aos="fade-up">
-                                        <div class="avatar-container text-center mx-auto">
-                                             <div class="card-up aqua-gradient"></div>
-                                             <!-- Avatar -->
-                                             <div class="avatar mx-auto white">
-                                                  <%= image_tag(professional.avatar, class: "rounded-circle img-responsive bg-white p-2 image-container", alt: professional.name) %>
-                                             </div>
-                                             <!-- Content -->
-                                             <div class="card-body">
-                                             <h4 class="card-title"><%= professional.name %></h4>
-                                             <hr>
-                                             <p><%= professional.description %></p>
-                                             </div>
                                         </div>
                                    </div>
-                                   <% end %>
+
+                              </div>
+                    <% else%>
+
+                              <h2 class="mb-5 text-center" data-aos="fade-up">
+                              Busca por <strong><%= params[:search] %></strong>
+                              <% if @professionals.count == 1 %>
+                                   retornou <strong>um</strong> registro
+                              <% else %>
+                                   retornou <strong><%= @professionals.count %></strong> registros
                               <% end %>
+                              </h2>
 
-                         </div>
-                    </div>
 
+                                   <div class="owl-carousel owl-theme" id="project-slide">
+
+                                        <% @professionals.each do |professional| %>
+                                             <%= link_to freelancers_path(professional) do %>
+                                             <div class="item project-wrapper" data-aos="fade-up">
+                                                  <div class="avatar-container text-center mx-auto">
+                                                       <div class="card-up my-gradient"></div>
+                                                       <!-- Avatar -->
+                                                       <div class="avatar mx-auto white">
+                                                            <%= image_tag(professional.avatar, class: "rounded-circle img-responsive bg-white p-2 image-container", alt: professional.name) %>
+                                                       </div>
+                                                       <!-- Content -->
+                                                       <div class="card-body">
+                                                       <h4 class="card-title"><%= professional.name %></h4>
+                                                       <hr>
+                                                       <p><%= professional.description %></p>
+                                                       </div>
+                                                  </div>
+                                             </div>
+                                             <% end %>
+                                        <% end %>
+                    <% end %>
                </div>
           </div>
+
+          </div>
+     </div>
      </section>
 
