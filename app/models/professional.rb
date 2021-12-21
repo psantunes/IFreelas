@@ -15,7 +15,7 @@ class Professional < ApplicationRecord
 
   validates :email, format: { with: /[\w+\-.]+@[a-z\d\-]+(\.[a-z]+)*\.[a-z]/}, uniqueness: true
   validates :name, presence: true, format: { with: /[A-Za-z]*/ }
-  validates :birth_date, :course, :semester, :type_of_work, :work_shift,
+  validates :birth_date, :mobile, :course, :semester, :type_of_work, :work_shift,
             presence: true, unless: proc { |c| c.new_record? }
 
   enum semester: { "1º": 1, "2º": 2, "3º": 3, "4º": 4, "5º": 5, "6º": 6 }

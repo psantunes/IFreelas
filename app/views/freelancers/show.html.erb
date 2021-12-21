@@ -13,9 +13,9 @@
             <h3>Currículo de<br><strong><%= @professional.name %></strong></h3>
           </div>
         </div>
-        <div class="row py-3">
+        <div class="row">
 
-          <div class="col-12">
+          <div class="col-12 py-3">
             
             <p><%= @professional.description %></p>
             <p>Cursando o <%= @professional.semester %> semestre do curso <%= @professional.course.name %>.</p>    
@@ -28,7 +28,7 @@
 
 
           <% if @professional.languages.present? %>
-            <div class="col-12">
+            <div class="col-12 py-3">
                 <p><strong>Idiomas</strong></p>
               
                 <% @professional.languages.each do |language| %>
@@ -39,7 +39,7 @@
           <% end %>
 
           <% if @professional.skills.present? %>
-            <div class="col-12">
+            <div class="col-12 py-3">
 
                 <p><strong>Habilidades</strong></p>
                   
@@ -48,36 +48,120 @@
                 <% end %>
                 <div class="skills_br"></div>
 
+
             </div>
           <% end %>
+
+            <div class="col-12 py-3">
+
+              <% if @professional.github.present? %>
+                <p>
+                  <i class='fa fa-github'></i> Repositório no Github:
+                  <%= link_to @professional.github, target:"_blank" do  %>                    
+                    <%= @professional.github %>
+                  <% end %>
+                </p>
+              <% end %>
+            </div>
+
+          <% if @professional.experiences.present? %>
+            <div class="col-12 py-3">
+
+                <p><strong>Experiências</strong></p>
+
+                <% @professional.experiences.each do |experience| %>
+                  <p><i class="fa fa-check"></i> <%= experience.title %></p>
+                  <p><%= experience.description %></p>
+                <% end %>
+
+            </div>
+          <% end %>
+
+
+            <div class="col-12 py-3">
+
+                <p><strong>Disponibilidade</strong></p>
+
+              <p>Disponível para trabalhar
+              <% if @professional.work_shift ==  "Manhã" %>
+              no turno da manhã.
+              <% elsif @professional.work_shift ==  "Tarde" %>
+              no turno da tarde.
+              <% elsif @professional.work_shift ==  "Noite" %>
+              à noite.
+              <% elsif @professional.work_shift ==  "Integral" %>
+              em turno integral.
+              <% elsif @professional.work_shift ==  "Finais de semana" %>
+              aos finais de semana.
+              <% end %>
+              </p>
+
+              <p>Preferência por trabalho 
+              <% if @professional.type_of_work ==  "In company" %>
+              in company.
+              <% elsif @professional.type_of_work ==  "Home office" %>
+              em home office.
+              <% else %>
+              em regime de trabalho híbrido.
+              <% end %>
+
+              <% if @professional.experiences.present? %>
+                <p>Aceita ofertas de trabalho presencial em:</p>
+                  <% @professional.regions.each do |region| %>
+                    <i class="fa fa-check"></i> <%= region.name %><br>
+                  <% end %>
+              <% end %>
+            </div>
               
-            <div class="col-12">
+            <div class="col-12 py-3">
+
+            <p><strong>Contato</strong></p>
+
+            </div>
+
+              <% if current_client.present? || current_professional == @professional  %>
 
 
-              <h4 class="mb-3 mt-5">Experiência</h4>
+                  <% if @professional.linkedin.present? %>
+                    <div class="col-6 py-3 text-center">
+                      <%= link_to @professional.linkedin, target:"_blank" do  %>
+                        <i class='fa fa-linkedin'></i><br>
+                        <%= @professional.linkedin.sub("https://www.linkedin.com/in/", "").gsub("/", "") %>
+                      <% end %>
+                  </div>
+                <% end %>
+      
+                <% if @professional.whatsapp == true %>
+                  <div class="col-6 py-3 text-center">
+                    <%= link_to "https://wa.me/55#{@professional.mobile}", target:"_blank" do  %>
+                      <i class="fa fa-whatsapp"></i><br>
+                      <%= @professional.mobile %>
+                    <% end %>
+                  </div>
+                <% end %>
+      
+                <% if @professional.website.present? %>
+                  <div class="col-6 py-3 text-center">
+                    <%= link_to @professional.website, target:"_blank" do  %>
+                      <i class="fa  fa-file-text"></i><br>
+                      <%= @professional.website %>
+                    <% end %>
+                  </div>
+                  <% end %>
 
-            <p><strong>Title</strong></p>
-            <p>Descriptio.</p>
+                  <div class="<% if @professional.website.blank? %>offset-3<% end %> col-6 py-3 text-center">
+                        <i class="fa fa-envelope"></i><br>
+                      <%= @professional.email %>
+                  </div>
 
+              <% else %>
 
-              
-            <h4 class="mb-3 mt-5">4. Disponibilidade</h4>
-            <p>Horários livres: manhãe e tardes.</p>
-            <p>Disponível para trabalho: home office e in company.</p>
-            <p>Regiões de preferência: Porto Alegre (todas as regiões).</p>
-            
-            <h4 class="mb-3 mt-5">5. Contato</h4>
-              
-                <div class="text-center">
-                <ul class="ftco-footer-social">
-                <li><a href="linkedin"><span class="icon-linkedin"></span></a></li>
-                <li><a href="zap"><span class="icon-whatsapp"></span></a></li>
-                <li><a href="site"><span class="icon-link"></span></a></li>
-                <li><a href="mailto:email"><span class="icon-mail_outline"></span></a></li>
-                </ul>
+                <div class="col-12 py-3 text-center">
+                  <h5>Para contatar este professional,<br>faça seu <%= link_to "cadastro", new_client_session_path %> ou <%= link_to "login", client_session_path %> como cliente.</h5>
                 </div>
-                <br>
-              
+    
+              <% end %>
+
           </div>
           </div>
 
