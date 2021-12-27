@@ -751,3 +751,9 @@ https://templatemo.com/tm-538-digital-trend
 .skills_br {
   clear: both;
 }
+.toast-info, .toast-success {
+  background-color: var(--primary-color) !important;
+} 
+.toast-error {
+  background-color: var(--secondary-color) !important;
+} 
