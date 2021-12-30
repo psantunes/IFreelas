@@ -3,12 +3,11 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '3.0.3'
 
-# Added by psantunes
-gem 'activeadmin'
+gem 'activeadmin' # Added by psantunes
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.9.3', require: false
-gem 'cocoon'
-gem 'devise', '~> 4.2'
+gem 'cocoon' # Added by psantunes
+gem 'devise', '~> 4.2' # Added by psantunes
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.7'
 gem 'rails', '~> 6.1.4', '>= 6.1.4.1'

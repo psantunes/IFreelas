@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# Add several fields to Professional
 class AddFieldsToProfessionals < ActiveRecord::Migration[6.1]
   def change
     add_column :professionals, :description, :text
