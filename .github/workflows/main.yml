@@ -66,3 +66,4 @@ jobs:
           gem install bundler
           bundler install --jobs 4 --retry 3
           bundle exec rails db:prepare
+          rubocop
