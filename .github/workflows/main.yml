@@ -54,7 +54,7 @@ jobs:
         with:
           cmd: install
 
-      - name: Buld appilication
+      - name: Buld application
         env:
           DATABASE_URL: postgres://postgres:@localhost:5432/test
           REDIS_URL: redis://localhost:6379/0
@@ -66,16 +66,13 @@ jobs:
           gem install bundler
           bundler install --jobs 4 --retry 3
           bundle exec rails db:prepare
-  # Second job: run linter
-  run-linters:
-    name: Run linters
-    runs-on: ubuntu-latest
 
-    steps:
       - name: Check out Git repository
         uses: actions/checkout@v2
 
-      - name: Run Rubocop
-        uses: wearerequired/lint-action@v1
+      - name: RuboCop Linter
+        uses: andrewmcodes/rubocop-linter-action@v3.3.0
         with:
-          rubocop: true
+          action_config_path: ".github/config/rubocop_linter_action.yml"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
