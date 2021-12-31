@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# app/models/professional.rb
 class Professional < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable,

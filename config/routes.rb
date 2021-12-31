@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 Rails.application.routes.draw do
   devise_for :clients, controllers: { registrations: 'registrations' }
   devise_for :professionals, controllers: { registrations: 'registrations' }
