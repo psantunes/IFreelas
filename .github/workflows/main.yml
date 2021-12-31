@@ -15,7 +15,7 @@ on:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  # This workflow contains a single job called "build"
+  # First job: build
   build:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
@@ -54,7 +54,7 @@ jobs:
         with:
           cmd: install
 
-      - name: Buld and run tests
+      - name: Buld appilication
         env:
           DATABASE_URL: postgres://postgres:@localhost:5432/test
           REDIS_URL: redis://localhost:6379/0
@@ -66,4 +66,13 @@ jobs:
           gem install bundler
           bundler install --jobs 4 --retry 3
           bundle exec rails db:prepare
-          rubocop
+  # Second job: run linter
+  run-linters:
+    name: Run linters
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Run Rubocop
+        uses: wearerequired/lint-action@v1
+        with:
+          rubocop: true
