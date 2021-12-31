@@ -15,8 +15,10 @@ on:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  # First job: build
+  # First job: setup
   build:
+    needs: setup
+
     runs-on: ubuntu-latest
     services: 
       db: 
@@ -66,10 +68,6 @@ jobs:
           bundler install --jobs 4 --retry 3
           bundle exec rails db:prepare
 
-  # Second job: run linter
-  linter:
-    needs: build
-    steps:
       - name: RuboCop Linter
         uses: andrewmcodes/rubocop-linter-action@v3.3.0
         with:
