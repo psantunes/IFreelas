@@ -50,7 +50,8 @@ jobs:
         with:
           node-version: 14.17.4
 
-      - uses: borales/actions-yarn@v2.3.0
+      - name: Install Yarn
+        uses: borales/actions-yarn@v2.3.0
         with:
           cmd: install
 
@@ -66,9 +67,6 @@ jobs:
           gem install bundler
           bundler install --jobs 4 --retry 3
           bundle exec rails db:prepare
-
-      - name: Check out Git repository
-        uses: actions/checkout@v2
 
       - name: RuboCop Linter
         uses: andrewmcodes/rubocop-linter-action@v3.3.0
