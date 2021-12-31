@@ -17,8 +17,6 @@ on:
 jobs:
   # First job: setup
   build:
-    needs: setup
-
     runs-on: ubuntu-latest
     services: 
       db: 
