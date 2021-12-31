@@ -1,5 +1,5 @@
 class RegistrationsController < Devise::RegistrationsController
-  before_action :load_attributes, only: [:edit, :update]
+  before_action :load_attributes, only: %i[edit update]
 
   def edit
     @professional.experiences.build if resource_class == Professional
