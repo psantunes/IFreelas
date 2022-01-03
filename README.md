@@ -26,7 +26,9 @@ Para funcionar em produção, será preciso configurar um conta do Gmail para en
 Os campos necessários, que devem ser inseridos num arquivo .ENV, são:
 
 SMTP_FROM=
+
 SMTP_USERNAME=
+
 SMTP_PASSWORD=
 
 Em ambiente local, o sistema usamos a gem letter_opener para testar o envio e recebimento de e-mails.
@@ -42,7 +44,7 @@ O usuário pré-configurado se chama "admin@admin.com" e a senha "qwerty"
 A plataforma foi concebida ao longo de diversas disciplinas do curso de Tecnologia em Sistemas para Internet do IFRS Porto Alegre.
 
 A concepção ocorreu no primeiro semestre de 2019, na disciplina de Construção
-de Páginas Web I, sob supervisão do professor Evandro Miletto, onde ganhou seu primeiro layout (disponível em https://github.com/psantunes/IFreelas), e teve uma
+de Páginas Web I, sob supervisão do professor Evandro Miletto, onde ganhou seu primeiro layout (disponível em https://github.com/psantunes/IFreelas---layout), e teve uma
 versão preliminar de sua base de dados desenhada na disciplina de Banco de Dados I,
 sob supervisão da professora Tanisi Pereira de Carvalho.
 
