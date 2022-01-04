@@ -8,7 +8,7 @@ https://templatemo.com/tm-538-digital-trend
   
 @font-face {
      font-family: 'Plain-Regular';
-     src: url('Plain-Regular.woff') format('woff'),
+     src: asset-url('Plain-Regular.woff') format('woff'),
      asset-url('Plain-Regular.woff2') format('woff2');
      font-weight: normal;
      font-style: normal;
@@ -16,7 +16,7 @@ https://templatemo.com/tm-538-digital-trend
 
  @font-face {
      font-family: 'Plain-Light';
-     src: url('Plain-Light.woff') format('woff'),
+     src: asset-url('Plain-Light.woff') format('woff'),
      asset-url('Plain-Light.woff2') format('woff2');
      font-weight: bold;
      font-style: normal;
@@ -24,7 +24,7 @@ https://templatemo.com/tm-538-digital-trend
 
  @font-face {
      font-family: 'Plain-Bold';
-     src: url('Plain-Bold.woff') format('woff'),
+     src: asset-url('Plain-Bold.woff') format('woff'),
      asset-url('Plain-Bold.woff2') format('woff2');
      font-weight: bold;
      font-style: normal;
