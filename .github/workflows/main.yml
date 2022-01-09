@@ -80,5 +80,6 @@ jobs:
           RAILS_ENV: test
           RAILS_MASTER_KEY: ${{ secrets.RAILS_MASTER_KEY }}
           POSTGRES_PASSWORD: postgres
+          SMTP_FROM: ${{ secrets.SMTP_FROM }}
         run: |
           bundle exec rspec
