@@ -84,4 +84,4 @@ jobs:
           SMTP_USERNAME: ${{ secrets.SMTP_USERNAME }}
           SMTP_PASSWORD: ${{ secrets.SMTP_PASSWORD }}
         run: |
-          bundle exec rspec --format RspecGithubActionsFormatter
+          bundle exec rspec -fd
