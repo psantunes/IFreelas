@@ -54,7 +54,7 @@ group :test do
   gem 'capybara', '>= 3.26'
   gem 'faker'
   gem 'rspec-rails'
-  gem 'rspec-github', require: false
+  gem 'rspec-github-actions-formatter'
   gem 'rubocop-rails', require: false
   gem 'selenium-webdriver'
   # Easy installation and use of web drivers to run system tests with browsers
