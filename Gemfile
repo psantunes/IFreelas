@@ -11,6 +11,7 @@ gem 'bootsnap', '>= 1.9.3', require: false
 gem 'cocoon' # Added by psantunes
 gem 'devise', '~> 4.2' # Added by psantunes
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
+gem 'dotenv-rails'
 gem 'jbuilder', '~> 2.7'
 gem 'rails', '~> 6.1.4', '>= 6.1.4.1'
 # Use postgresql as the database for Active Record
@@ -34,7 +35,6 @@ gem 'turbolinks', '~> 5'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
-  gem 'dotenv-rails'
 end
 
 group :development do
