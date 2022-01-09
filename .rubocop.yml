@@ -1,0 +1,9 @@
+# Common configuration.
+
+AllCops:
+  NewCops: enable
+  Exclude:
+    - 'db/schema.rb'
+
+Layout/LineLength:
+  Max: 150

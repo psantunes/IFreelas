@@ -35,9 +35,10 @@ RSpec.describe Professional do
   end
 
   describe 'Verify model validations' do
-    subject { Professional.new(name: Faker::Name.name,
-                               email: Faker::Internet.email,
-                               password: Faker::Internet.password)
+    subject {
+      Professional.new(name: Faker::Name.name,
+                       email: Faker::Internet.email,
+                       password: Faker::Internet.password)
     }
     it { is_expected.to validate_presence_of(:name) }
     it { is_expected.to validate_uniqueness_of(:email).ignoring_case_sensitivity }
