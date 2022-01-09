@@ -44,15 +44,34 @@ O usuário pré-configurado se chama "admin@admin.com" e a senha "qwerty"
 A plataforma foi concebida ao longo de diversas disciplinas do curso de Tecnologia em Sistemas para Internet do IFRS Porto Alegre.
 
 A concepção ocorreu no primeiro semestre de 2019, na disciplina de Construção
-de Páginas Web I, sob supervisão do professor Evandro Miletto, onde ganhou seu primeiro layout (disponível em https://github.com/psantunes/IFreelas---layout), e teve uma
+de Páginas Web I, sob supervisão do professor Evandro Miletto, onde ganhou seu primeiro layout (disponível em <https://github.com/psantunes/IFreelas---layout>), e teve uma
 versão preliminar de sua base de dados desenhada na disciplina de Banco de Dados I,
 sob supervisão da professora Tanisi Pereira de Carvalho.
 
 Na disciplina de Engenharia de Software I, sob orientação da professora Márcia Häfele Islabão Franco, o levantamento de requisitos e funcionalidades se limitou a descrever
 apenas a interface do usuário da operação (com operações de login, atualização cadastral e consulta). Uma especificação mais detalhada, incluindo o funcionamento de funções administrativas, foi feita na disciplina de Engenharia de Software II.
 
-Este protótipo foi apresentado no semestre 2022/2, na disciplina de Engenharia de Software III e prevê o reuso de software para ganhar tempo de desenvolvimento. Além do aproveitamento de parte do layout e da modelagem do banco de dados, foram usadas diversas bibliotecas do Rails para acelerar a entrega, como uma ferramenta de back-office (ActiveAdmin), a gestão de acesso de login e senha (Devise) e template de front-end Digital Trend, da TemplateMO (disponível em https://templatemo.com/tm-538-digital-trend).
+Esta aplicação foi desenvolvida no segundo semestre de 2022, na disciplina de Engenharia de Software III e prevê o reuso de software para ganhar tempo de desenvolvimento. Além do aproveitamento de parte do layout e da modelagem do banco de dados, foram usadas diversas bibliotecas do Rails para acelerar a entrega, como uma ferramenta de back-office (ActiveAdmin), a gestão de acesso de login e senha (Devise) e template de front-end Digital Trend, da TemplateMO (disponível em <https://templatemo.com/tm-538-digital-trend>).
 
-O protótipo foi desenvolvido por Antonio Paulo Serpa Antunes.
+A aplicação foi inteiramente desenvolvida por Antonio Paulo Serpa Antunes. Ao longo de todo o ciclo de desenvolvimento deste projeto participaram do projeto os seguintes estudantes: Jefferson Ribeiro, Marcos Vinicios Dornelles e Alexandre de Mesquita Fabian.
 
-Ao longo de todo o ciclo de desenvolvimento deste projeto participaram os seguintes estudantes: Jefferson Ribeiro, Marcos Vinicios Dornelles e Alexandre de Mesquita Fabian.
+**Plano de Testes**: em paralelo ao desenvolvimento do IFreelas, foi feita para a disciplina de Validação e Verificação de Sistemas, sob supervisão do professor [Rodrigo Prestes Machado](https://github.com/rodrigoprestesmachado/), a definição de um plano de testes para colocar a aplicação no ar. 
+
+Foi definido que seriam implantados:
+1. Inspeções estáticas, removendo todos os erros graves apontados pela ferramenta
+2. Testes unitários, inicialmente testando Models
+3. Teste de interface
+4. Implantação de um plano de integração contínua
+
+Em janeiro de 2022 foi concluída a primeira fase do projeto:
+
+1. Inspeções estáticas com Rubocop: reduzido o número de erros de 285 para 65
+2. Testes unitários: criado teste para validar a criação de Profissionais e Cliente
+3. Teste de interface: criar teste para validar a primeira fase do cadastro de Profissionais e Cliente
+4. Implantação de um plano de integração contínua, incluindo deploy automático da aplicação para o Heroku
+
+Ficam faltando para as próximas versões da aplicação:
+
+1. Testes unitário para validar o cadastro completo de Profissionais e Clientes; testes na Busca, para verificar se a query está buscando profissionais por suas habilidades, descrições e experiências. 
+2. Testes unitários nas controllers
+3. Testes de interface para validar login e o preenchimento do cadastro completo.
