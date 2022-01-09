@@ -17,7 +17,7 @@ class Professional < ApplicationRecord
   has_one_attached :avatar
 
   validates :email, format: { with: /[\w+\-.]+@[a-z\d\-]+(\.[a-z]+)*\.[a-z]/ }, uniqueness: true
-  validates :name, presence: true, format: { with: /[A-Za-z\-A-Zàèìòùáéíóúâêîôûãõ\b] / }
+  validates :name, presence: true, format: { with: /[A-Za-z\-àèìòùáéíóúâêîôûãõ\b] / }
   validates :birth_date, :mobile, :course, :semester, :type_of_work, :work_shift,
             presence: true, unless: proc { |c| c.new_record? }
 
