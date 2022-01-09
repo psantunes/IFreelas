@@ -1,5 +1,8 @@
 require 'rails_helper'
 
-RSpec.feature "Professionals", type: :feature do
-  pending "add some scenarios (or delete) #{__FILE__}"
+RSpec.feature "Professionals", type: :feature, js: true do
+  it "Visit the login page" do
+    visit(new_professional_session_path)
+    page.save_screenshot('Test.jpg')
+  end
 end
