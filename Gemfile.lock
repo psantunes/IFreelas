@@ -105,6 +105,8 @@ GEM
       dotenv (= 2.7.6)
       railties (>= 3.2)
     erubi (1.10.0)
+    faker (2.19.0)
+      i18n (>= 1.6, < 2)
     ffi (1.15.4)
     formtastic (4.0.0)
       actionpack (>= 5.2.0)
@@ -265,6 +267,8 @@ GEM
       rexml (~> 3.2, >= 3.2.5)
       rubyzip (>= 1.2.2)
     semantic_range (3.0.0)
+    shoulda-matchers (5.1.0)
+      activesupport (>= 5.2.0)
     spring (3.0.0)
     sprockets (4.0.2)
       concurrent-ruby (~> 1.0)
@@ -315,6 +319,7 @@ DEPENDENCIES
   cocoon
   devise (~> 4.2)
   dotenv-rails
+  faker
   jbuilder (~> 2.7)
   letter_opener
   listen (~> 3.3)
@@ -326,6 +331,7 @@ DEPENDENCIES
   rubocop-rails
   sass-rails (>= 6)
   selenium-webdriver
+  shoulda-matchers (~> 5.0)
   spring
   turbolinks (~> 5)
   tzinfo-data
