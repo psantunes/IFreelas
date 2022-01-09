@@ -6,6 +6,6 @@
 /public/packs
 /public/packs-test
 /yarn-error.log
-.ENV
+.env
 yarn-debug.log*
 .yarn-integrity
