@@ -15,7 +15,7 @@ on:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  # First job: setup
+  # First job: setup and tests
   build:
     runs-on: ubuntu-latest
     services: 
@@ -85,3 +85,15 @@ jobs:
           SMTP_PASSWORD: ${{ secrets.SMTP_PASSWORD }}
         run: |
           bundle exec rspec -fd
+
+  # First job: setup
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: akhileshns/heroku-deploy@v3.12.12
+        with:
+          heroku_api_key: ${{secrets.HEROKU_API_KEY}}
+          heroku_app_name: fierce-everglades-11253
+          heroku_email: pauloserpaatunes@gmail.com
+          healthcheck: "https://fierce-everglades-11253.herokuapp.com/health"
