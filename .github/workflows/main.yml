@@ -86,14 +86,15 @@ jobs:
         run: |
           bundle exec rspec -fd
 
-  # First job: setup
+  # Second job: deploy
   deploy:
+    needs: build
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - uses: akhileshns/heroku-deploy@v3.12.12
         with:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
-          heroku_app_name: fierce-everglades-11253
+          heroku_app_name: "fierce-everglades-11253"
           heroku_email: pauloserpaatunes@gmail.com
-          healthcheck: "https://fierce-everglades-11253.herokuapp.com/health"
+          branch: "main"
