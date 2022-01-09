@@ -66,12 +66,13 @@ Foi definido que seriam implantados:
 Em janeiro de 2022 foi concluída a primeira fase do projeto:
 
 1. Inspeções estáticas com Rubocop: reduzido o número de erros de 285 para 65
-2. Testes unitários: criado teste para validar a criação de Profissionais e Cliente
-3. Teste de interface: criar teste para validar a primeira fase do cadastro de Profissionais e Cliente
-4. Implantação de um plano de integração contínua, incluindo deploy automático da aplicação para o Heroku
+2. Testes unitários com Rspec: criados testes para validar a criação de Profissionais e Cliente
+3. Testes de interface: criado teste para validar a primeira fase do cadastro de Profissionais e Cliente
+4. Implantação de um plano de integração contínua, incluindo deploy automático da aplicação para o Heroku com Github Actions
 
 Ficam faltando para as próximas versões da aplicação:
 
-1. Testes unitário para validar o cadastro completo de Profissionais e Clientes; testes na Busca, para verificar se a query está buscando profissionais por suas habilidades, descrições e experiências. 
-2. Testes unitários nas controllers
-3. Testes de interface para validar login e o preenchimento do cadastro completo.
+1. Reduzir ainda mais as ofensas no código apontadas pelo Rubocop
+2. Testes unitário para validar o cadastro completo de Profissionais e Clientes; testes na Busca, para verificar se a query está buscando profissionais por suas habilidades, descrições e experiências
+3. Testes unitários nas controllers
+4. Testes de interface para validar login e o preenchimento do cadastro completo
