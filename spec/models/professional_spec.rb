@@ -22,7 +22,7 @@ RSpec.describe Professional do
     professional2 = Professional.new(name: name, email: email, password: password)
 
     it 'e-mail is invalid' do
-      expect(professional2).to_not be_valid
+      expect(professional2).not_to be_valid
     end
 
     name = 'WHEN//.SCOOBY'
@@ -30,7 +30,7 @@ RSpec.describe Professional do
     professional3 = Professional.new(name: name, email: email, password: password)
 
     it 'name is invalid' do
-      expect(professional3).to_not be_valid
+      expect(professional3).not_to be_valid
     end
   end
 
