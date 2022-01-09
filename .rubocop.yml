@@ -6,4 +6,4 @@ AllCops:
     - 'db/schema.rb'
 
 Layout/LineLength:
-  Max: 150
+  Max: 155
